@@ -23,7 +23,7 @@ public class ProductController {
         product1.setProductId(1);
         product1.setProductName("Ratlami Sev");
         product1.setDescription("Spice gram flour noodles");
-        product1.setPrice(2.50f);
+        product1.setPrice(3.50f);
         product1.setImageUrl("https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg");
         productList.add(product1);
 
