@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <springProfile name="!dev">
+        <springProperty name="event_service_name" scope="context" source="spring.application.name"/>
+
+        <appender name="CONSOLE_JSON" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+                <providers>
+                    <timestamp/>
+                    <loggerName><fieldName>application_logger_name</fieldName></loggerName>
+                    <logLevel><fieldName>application_log_level</fieldName></logLevel>
+                    <message/>
+                    <stackTrace><fieldName>application_stack_trace</fieldName></stackTrace>
+                    <threadName><fieldName>event_threadname</fieldName></threadName>
+                    <pattern>
+                        <pattern>{"event_transaction_id":"%mdc{TRANSACTION_ID}"}</pattern>
+                    </pattern>
+                </providers>
+            </encoder>
+        </appender>
+
+        <root level="INFO">
+            <appender-ref ref="CONSOLE_JSON"/>
+        </root>
+    </springProfile>
+
+    <springProfile name="dev">
+        <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    </springProfile>
+
+</configuration>

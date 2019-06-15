@@ -1,6 +1,7 @@
 package ie.com.keshav.gateway.model.product;
 
 import lombok.Data;
+import org.springframework.data.annotation.Id;
 
 /**
  * Created by Amit Tank
@@ -8,6 +9,7 @@ import lombok.Data;
 @Data
 public class Product {
 
+    @Id
     private int productId;
 
     private String productName;

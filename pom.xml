@@ -6,7 +6,9 @@
 	<modules>
 		<module>api-gateway-web</module>
 		<module>api-gateway-model</module>
-	</modules>
+		<module>api-gateway-business</module>
+        <module>api-gateway-docker</module>
+    </modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -22,21 +24,60 @@
 
 	<properties>
 		<java.version>11</java.version>
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
+		<spring.boot.version>2.1.4.RELEASE</spring.boot.version>
 	</properties>
+
+	<developers>
+		<developer>
+			<name>Amit Tank</name>
+			<email>iamamittank@gmail.com</email>
+			<roles>
+				<role>Software Engineer</role>
+			</roles>
+			<organization>Accenture Ireland</organization>
+		</developer>
+	</developers>
 
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-web</artifactId>
-				<version>2.1.4.RELEASE</version>
+				<version>${spring.boot.version}</version>
+			</dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-jpa</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+
+            <dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-test</artifactId>
+				<version>${spring.boot.version}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>net.logstash.logback</groupId>
+				<artifactId>logstash-logback-encoder</artifactId>
+				<version>6.0</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.h2database</groupId>
+				<artifactId>h2</artifactId>
+				<version>1.4.199</version>
+				<scope>runtime</scope>
 			</dependency>
 
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-starter-test</artifactId>
-				<version>2.1.4.RELEASE</version>
-				<scope>test</scope>
+				<artifactId>spring-boot-starter-data-mongodb</artifactId>
+				<version>${spring.boot.version}</version>
 			</dependency>
 
 			<dependency>

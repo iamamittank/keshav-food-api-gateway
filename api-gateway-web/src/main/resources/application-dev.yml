@@ -1,17 +1,10 @@
 spring:
-  application:
-    name: "api-gateway-web"
   data:
     mongodb:
       uri: mongodb://keshav-db-support:rfZ4MkHRTyUmDInei7xJ4rBfIOlZNLArdprU9c8zDyXzFwszp9l2uDzxw43T1vqovZtaJ4UGOclMp5vEux0BqA==@keshav-db-support.documents.azure.com:10255/?ssl=true&replicaSet=globaldb
       database: keshav-db-support
       username: keshav-db-support
       password: rfZ4MkHRTyUmDInei7xJ4rBfIOlZNLArdprU9c8zDyXzFwszp9l2uDzxw43T1vqovZtaJ4UGOclMp5vEux0BqA==
-
-server:
-  port: 8080
-  servlet:
-    context-path: "/api-gateway-web"
 
 azure:
   mongo:
@@ -21,3 +14,4 @@ azure:
     uri: mongodb://keshav-db-support:rfZ4MkHRTyUmDInei7xJ4rBfIOlZNLArdprU9c8zDyXzFwszp9l2uDzxw43T1vqovZtaJ4UGOclMp5vEux0BqA==@keshav-db-support.documents.azure.com:10255/?ssl=true&replicaSet=globaldb
     username: keshav-db-support
     password: rfZ4MkHRTyUmDInei7xJ4rBfIOlZNLArdprU9c8zDyXzFwszp9l2uDzxw43T1vqovZtaJ4UGOclMp5vEux0BqA==
+
